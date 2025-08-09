@@ -64,8 +64,8 @@ export default function Tiers() {
                 }`}
               >
                 {index === 1 && (
-                  <div className="absolute -right-12 top-6 rotate-45 bg-gradient-to-r from-yellow-400 to-yellow-500 px-12 py-2 text-xs font-bold text-black shadow-lg">
-                    BEST VALUE
+                  <div className="absolute -right-9 top-6 rotate-45 bg-gradient-to-r from-yellow-400 to-yellow-500 px-12 py-2 text-xs font-bold text-black shadow-lg">
+                    인기상품
                   </div>
                 )}
 
