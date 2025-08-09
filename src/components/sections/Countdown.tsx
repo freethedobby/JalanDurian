@@ -59,6 +59,28 @@ export function Countdown({ launchDate, naverUrl, tossUrl }: CountdownProps) {
             </h2>
           </motion.div>
 
+          {/* 세일 프로모션 배너 */}
+          <motion.div className="mb-6 md:mb-8" variants={fadeInVariants}>
+            <div className="relative overflow-hidden rounded-2xl border-2 border-yellow-300 bg-gradient-to-r from-yellow-400 to-yellow-500 p-6 shadow-2xl">
+              <div className="absolute -right-8 -top-8 h-24 w-24 rotate-45 bg-red-500 text-white">
+                <div className="absolute bottom-2 left-2 text-xs font-bold">
+                  SALE
+                </div>
+              </div>
+              <div className="text-center">
+                <div className="mb-2 text-2xl font-black text-red-600 md:text-3xl">
+                  🔥 GRAND OPENING SALE 🔥
+                </div>
+                <div className="mb-3 text-lg font-bold text-green-800 md:text-xl">
+                  최대 40% 할인 + 무료배송
+                </div>
+                <div className="text-sm font-medium text-green-700 md:text-base">
+                  한정 수량 333개 • 조기 마감 예상
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
           <motion.p
             className="mb-8 text-base font-medium text-gray-100 md:mb-12 md:text-lg lg:text-xl xl:text-2xl"
             variants={fadeInVariants}
