@@ -200,48 +200,47 @@ export function Story({ config, badges }: StoryProps) {
             onClick={() => setSelectedFarmer(null)}
           >
             {/* 배경 오버레이 */}
-            <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
+            <div className="absolute inset-0 bg-black/50" />
 
             {/* 모달 컨텐츠 */}
             <motion.div
-              className="relative max-h-[80vh] w-full max-w-2xl overflow-auto rounded-3xl border border-emerald-200 bg-gradient-to-br from-yellow-50 to-emerald-50 shadow-2xl"
-              initial={{ scale: 0.8, opacity: 0, y: 50 }}
-              animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.8, opacity: 0, y: 50 }}
-              transition={{ duration: 0.3, ease: 'easeOut' }}
+              className="relative max-h-[80vh] w-full max-w-lg overflow-auto rounded-2xl bg-white shadow-xl"
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              transition={{ duration: 0.2 }}
               onClick={(e) => e.stopPropagation()}
             >
               {/* 헤더 */}
-              <div className="flex items-center justify-between border-b border-emerald-200 p-6">
-                <h3 className="text-2xl font-bold text-emerald-800">
-                  {selectedFarmer}의 가치관
+              <div className="flex items-center justify-between border-b border-gray-100 p-6">
+                <h3 className="text-xl font-semibold text-gray-900">
+                  {selectedFarmer}
                 </h3>
                 <button
                   onClick={() => setSelectedFarmer(null)}
-                  className="rounded-full p-2 transition-colors duration-200 hover:bg-emerald-100"
+                  className="rounded-full p-1 text-gray-400 hover:text-gray-600"
                 >
-                  <X className="h-5 w-5 text-emerald-600" />
+                  <X className="h-4 w-4" />
                 </button>
               </div>
 
               {/* 컨텐츠 */}
               <div className="space-y-6 p-6">
                 {/* 인용구 */}
-                <div className="relative">
-                  <Quote className="absolute -left-2 -top-2 h-8 w-8 text-emerald-300" />
-                  <blockquote className="rounded-2xl border border-emerald-100 bg-white/60 py-4 pl-6 pr-4">
-                    <p className="text-lg font-medium italic leading-relaxed text-gray-800">
-                      {farmerPhilosophies[selectedFarmer]?.quote}
+                <div>
+                  <blockquote className="text-center">
+                    <p className="text-lg italic leading-relaxed text-gray-800">
+                      "{farmerPhilosophies[selectedFarmer]?.quote}"
                     </p>
 
                     {/* 말레이어 번역 */}
                     {farmerPhilosophies[selectedFarmer]?.translation && (
-                      <div className="mt-4 border-t border-emerald-100 pt-4">
-                        <p className="text-sm font-medium text-emerald-700">
+                      <div className="mt-4 border-t border-gray-100 pt-4">
+                        <p className="mb-2 text-sm text-gray-600">
                           한국어 번역:
                         </p>
-                        <p className="mt-2 text-base leading-relaxed text-gray-700">
-                          {farmerPhilosophies[selectedFarmer]?.translation}
+                        <p className="text-base italic text-gray-700">
+                          "{farmerPhilosophies[selectedFarmer]?.translation}"
                         </p>
                       </div>
                     )}
@@ -250,35 +249,18 @@ export function Story({ config, badges }: StoryProps) {
 
                 {/* 핵심 가치 */}
                 <div>
-                  <h4 className="mb-4 flex items-center gap-2 text-lg font-semibold text-emerald-800">
-                    <Heart className="h-5 w-5 text-emerald-600" />
-                    핵심 가치
-                  </h4>
-                  <div className="space-y-3">
+                  <div className="space-y-2">
                     {farmerPhilosophies[selectedFarmer]?.values.map(
                       (value, index) => (
-                        <motion.div
+                        <div
                           key={index}
-                          className="flex items-center gap-3 rounded-xl border border-emerald-100 bg-white/40 p-3"
-                          initial={{ opacity: 0, x: -20 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{ delay: index * 0.1 }}
+                          className="text-center text-sm text-gray-600"
                         >
-                          <div className="h-2 w-2 flex-shrink-0 rounded-full bg-emerald-500" />
-                          <span className="font-medium text-gray-800">
-                            {value}
-                          </span>
-                        </motion.div>
+                          {value}
+                        </div>
                       )
                     )}
                   </div>
-                </div>
-
-                {/* 클로징 메시지 */}
-                <div className="rounded-2xl bg-gradient-to-r from-emerald-100 to-yellow-100 p-4 text-center">
-                  <p className="text-sm font-medium text-emerald-700">
-                    진정한 품질에 대한 열정으로 최고의 두리안을 선별합니다
-                  </p>
                 </div>
               </div>
             </motion.div>
