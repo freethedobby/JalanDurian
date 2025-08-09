@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { MapPin, Award } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from '../ui/card'
@@ -49,7 +50,7 @@ export function Story({ config, badges }: StoryProps) {
           className="mb-16 grid gap-8 md:grid-cols-2"
           variants={staggerContainerVariants}
         >
-          {config.farmers.map((farmer, index) => (
+          {config.farmers.map((farmer) => (
             <motion.div key={farmer.name} variants={staggerItemVariants}>
               <Card className="h-full rounded-2xl border border-black/10 bg-black/5 shadow-lg backdrop-blur-sm transition-all duration-300 hover:bg-black/10 hover:shadow-xl">
                 <CardHeader className="pb-4 text-center">
@@ -101,11 +102,12 @@ export function Story({ config, badges }: StoryProps) {
                     {config.location.coordinates}
                   </p>
                 </div>
-                <div className="aspect-video overflow-hidden rounded-lg">
-                  <img
+                <div className="relative aspect-video overflow-hidden rounded-lg">
+                  <Image
                     src={config.location.mapImage}
                     alt={config.location.name}
-                    className="h-full w-full object-cover"
+                    fill
+                    className="object-cover"
                   />
                 </div>
               </CardContent>

@@ -44,49 +44,51 @@ export default function FAQ() {
         </motion.div>
 
         <motion.div className="space-y-4" variants={staggerContainerVariants}>
-          {siteConfig.faq.map((item: any, index: number) => (
-            <motion.div
-              key={index}
-              variants={staggerItemVariants}
-              className="overflow-hidden rounded-2xl border border-gray-200 bg-white/80 shadow-lg backdrop-blur-sm transition-all duration-300 hover:shadow-xl"
-            >
-              <button
-                onClick={() => toggleItem(index)}
-                className="w-full px-8 py-6 text-left transition-all duration-300 hover:bg-gray-50/50"
+          {siteConfig.faq.map(
+            (item: { question: string; answer: string }, index: number) => (
+              <motion.div
+                key={index}
+                variants={staggerItemVariants}
+                className="overflow-hidden rounded-2xl border border-gray-200 bg-white/80 shadow-lg backdrop-blur-sm transition-all duration-300 hover:shadow-xl"
               >
-                <div className="flex items-center justify-between">
-                  <h3 className="pr-4 text-lg font-semibold leading-relaxed text-gray-900 md:text-xl">
-                    {item.question}
-                  </h3>
-                  <motion.div
-                    animate={{ rotate: openItems.includes(index) ? 180 : 0 }}
-                    transition={{ duration: 0.3, ease: 'easeInOut' }}
-                    className="flex-shrink-0"
-                  >
-                    <ChevronDown className="h-5 w-5 text-emerald-600" />
-                  </motion.div>
-                </div>
-              </button>
+                <button
+                  onClick={() => toggleItem(index)}
+                  className="w-full px-8 py-6 text-left transition-all duration-300 hover:bg-gray-50/50"
+                >
+                  <div className="flex items-center justify-between">
+                    <h3 className="pr-4 text-lg font-semibold leading-relaxed text-gray-900 md:text-xl">
+                      {item.question}
+                    </h3>
+                    <motion.div
+                      animate={{ rotate: openItems.includes(index) ? 180 : 0 }}
+                      transition={{ duration: 0.3, ease: 'easeInOut' }}
+                      className="flex-shrink-0"
+                    >
+                      <ChevronDown className="h-5 w-5 text-emerald-600" />
+                    </motion.div>
+                  </div>
+                </button>
 
-              <AnimatePresence>
-                {openItems.includes(index) && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3, ease: 'easeInOut' }}
-                    className="overflow-hidden"
-                  >
-                    <div className="border-t border-gray-100 bg-gray-50/30 px-8 py-6">
-                      <p className="text-base font-light leading-relaxed text-gray-700 md:text-lg">
-                        {item.answer}
-                      </p>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
-          ))}
+                <AnimatePresence>
+                  {openItems.includes(index) && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: 'easeInOut' }}
+                      className="overflow-hidden"
+                    >
+                      <div className="border-t border-gray-100 bg-gray-50/30 px-8 py-6">
+                        <p className="text-base font-light leading-relaxed text-gray-700 md:text-lg">
+                          {item.answer}
+                        </p>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            )
+          )}
         </motion.div>
 
         <motion.div className="mt-16 text-center" variants={fadeInVariants}>

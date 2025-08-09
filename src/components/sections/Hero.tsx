@@ -1,8 +1,8 @@
 'use client'
 
 import React from 'react'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { ChevronDown } from 'lucide-react'
 import { Button } from '../ui/button'
 import { scrollToSection } from '../../lib/utils'
 import siteConfig from '../../../content/site.json'
@@ -23,8 +23,6 @@ const staggerContainer = {
 }
 
 export default function Hero() {
-  const config = siteConfig
-
   return (
     <section
       id="hero"
@@ -33,10 +31,12 @@ export default function Hero() {
     >
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <img
+        <Image
           src="/durian_farm.jpg"
           alt="Durian Farm"
-          className="h-full w-full object-cover opacity-30"
+          fill
+          className="object-cover opacity-30"
+          priority
         />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-yellow-400/20 to-transparent" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(0,0,0,0.3),transparent)]" />

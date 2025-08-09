@@ -1,8 +1,7 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { scrollToSection } from '../lib/utils'
+import { motion } from 'framer-motion'
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)

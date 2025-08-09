@@ -28,13 +28,13 @@
     "philosophy": "두리안은 기다림의 과일입니다. 완벽한 숙성의 순간을 포착하는 것, 그것이 우리가 30년간 지켜온 장인정신입니다.",
     "farmers": [
       {
-        "name": "이정우 농장주",
+        "name": "PAMKUN 농장주",
         "role": "3대째 두리안 농장 운영",
         "description": "말레이시아 조호르바루에서 30년간 두리안을 재배해온 전문가입니다.",
         "image": "/assets/images/farmer-lee.jpg"
       },
       {
-        "name": "김영희 대표",
+        "name": "Sunny 대표",
         "role": "품질 관리 및 유통",
         "description": "한국과 말레이시아를 오가며 최상의 품질만을 선별합니다.",
         "image": "/assets/images/farmer-kim.jpg"

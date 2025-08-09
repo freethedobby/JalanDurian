@@ -63,7 +63,7 @@ export function ScrollIndicator({ className = '' }: ScrollIndicatorProps) {
       window.removeEventListener('scroll', handleScroll)
       clearTimeout(scrollTimeout)
     }
-  }, [])
+  }, [sections])
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
@@ -102,7 +102,7 @@ export function ScrollIndicator({ className = '' }: ScrollIndicatorProps) {
               exit={{ opacity: 0, scale: 0.8 }}
               transition={{ duration: 0.3 }}
             >
-              {sections.map((section, index) => {
+              {sections.map((section) => {
                 const Icon = section.icon
                 const isActive = activeSection === section.id
 
