@@ -136,9 +136,9 @@
       {
         "name": "두리안 스당",
         "weight": "2.5-2.9kg",
-        "description": "두리안 경험자를 위한 중급자 추천 사이즈",
+        "description": "블랙쏜 두리안 평균 사이즈",
         "originalPrice": 159000,
-        "launchPrice": 99000,
+        "launchPrice": 113000,
         "features": [
           "GAP 인증",
           "당일 항공 운송",
@@ -149,9 +149,9 @@
       {
         "name": "두리안 라자",
         "weight": "3.0kg+",
-        "description": "두리안 매니아를 위한 최대 사이즈",
-        "originalPrice": 229000,
-        "launchPrice": 189000,
+        "description": "블랙쏜 매니아를 위한 킹사이즈",
+        "originalPrice": 179000,
+        "launchPrice": 125300,
         "features": [
           "GAP 인증",
           "당일 항공 운송",

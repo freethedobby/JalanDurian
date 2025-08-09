@@ -89,7 +89,7 @@ export function Countdown({ launchDate, naverUrl, tossUrl }: CountdownProps) {
                   </div>
                   <div className="hidden h-6 w-px bg-white/50 md:block" />
                   <div className="text-lg font-bold text-yellow-300 md:text-xl lg:text-2xl">
-                    최대 40% 할인
+                    최대 30% 할인
                   </div>
                   <div className="text-base font-bold text-yellow-200 md:text-lg lg:text-xl">
                     + 무료배송

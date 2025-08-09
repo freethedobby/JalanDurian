@@ -63,7 +63,7 @@ export default function Tiers() {
                   </div>
                   <div className="hidden h-6 w-px bg-black/30 md:block" />
                   <div className="text-lg font-bold text-green-800 md:text-xl lg:text-2xl">
-                    런칭 기념 40% 할인
+                    런칭 기념 30% 할인
                   </div>
                   <div className="text-base font-bold text-green-700 md:text-lg lg:text-xl">
                     + 항공 직송
