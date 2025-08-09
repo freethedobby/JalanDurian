@@ -83,7 +83,7 @@ export default function Tiers() {
         </motion.div>
 
         <motion.div
-          className="grid gap-8 md:grid-cols-3"
+          className="grid gap-8 md:grid-cols-2"
           variants={staggerContainerVariants}
         >
           {siteConfig.tiers.items.map(
@@ -102,12 +102,12 @@ export default function Tiers() {
                 key={tier.name}
                 variants={staggerItemVariants}
                 className={`hover:shadow-3xl relative overflow-hidden rounded-2xl border-2 bg-white/95 shadow-2xl backdrop-blur-sm transition-all duration-300 hover:scale-105 ${
-                  index === 1
+                  index === 0
                     ? 'border-yellow-400 bg-gradient-to-b from-yellow-50 to-white'
                     : 'border-white/20 hover:border-white/40'
                 }`}
               >
-                {index === 1 && (
+                {index === 0 && (
                   <div className="absolute -right-9 top-6 rotate-45 bg-gradient-to-r from-yellow-400 to-yellow-500 px-12 py-2 text-xs font-bold text-black shadow-lg">
                     인기상품
                   </div>
@@ -157,7 +157,7 @@ export default function Tiers() {
                     variant={index === 1 ? 'default' : 'outline'}
                     size="lg"
                     className={`w-full font-semibold tracking-wide transition-all duration-300 ${
-                      index === 1
+                      index === 0
                         ? 'bg-gradient-to-r from-emerald-600 to-emerald-700 text-white shadow-lg hover:from-emerald-700 hover:to-emerald-800 hover:shadow-xl'
                         : 'border-2 border-emerald-600 text-emerald-700 hover:border-emerald-700 hover:bg-emerald-50'
                     }`}
