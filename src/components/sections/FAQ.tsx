@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
 import {
@@ -19,6 +20,28 @@ export default function FAQ() {
     setOpenItems((prev) =>
       prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
     )
+  }
+
+  // FAQ 항목에 따른 이미지 매핑
+  const getFAQImage = (question: string, index: number) => {
+    if (question.includes('Black Thorn')) {
+      return '/assets/images/farmer-kim.jpg' // Black Thorn 관련 질문
+    } else if (question.includes('말레이시아')) {
+      return '/assets/images/farm-location.jpg' // 말레이시아 관련 질문
+    } else if (question.includes('보관')) {
+      return '/assets/images/farmer-lee.jpg' // 보관 관련 질문
+    } else if (question.includes('향')) {
+      return '/assets/images/hero-farm.jpg' // 향 관련 질문
+    } else {
+      // 기본 이미지들을 순환
+      const defaultImages = [
+        '/assets/images/farmer-kim.jpg',
+        '/assets/images/farmer-lee.jpg',
+        '/assets/images/farm-location.jpg',
+        '/assets/images/hero-farm.jpg',
+      ]
+      return defaultImages[index % defaultImages.length]
+    }
   }
 
   return (
@@ -56,9 +79,25 @@ export default function FAQ() {
                   className="w-full px-8 py-6 text-left transition-all duration-300 hover:bg-gray-50/50"
                 >
                   <div className="flex items-center justify-between">
-                    <h3 className="pr-4 text-lg font-semibold leading-relaxed text-gray-900 md:text-xl">
-                      {item.question}
-                    </h3>
+                    <div className="flex items-center space-x-4">
+                      <motion.div
+                        className="relative h-12 w-12 flex-shrink-0 overflow-hidden rounded-full border-2 border-emerald-200 shadow-md"
+                        whileHover={{ scale: 1.1, rotate: 5 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <Image
+                          src={getFAQImage(item.question, index)}
+                          alt="durian related"
+                          fill
+                          className="object-cover transition-transform duration-300 hover:scale-110"
+                          sizes="48px"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/20 to-transparent opacity-0 transition-opacity duration-300 hover:opacity-100" />
+                      </motion.div>
+                      <h3 className="pr-4 text-lg font-semibold leading-relaxed text-gray-900 md:text-xl">
+                        {item.question}
+                      </h3>
+                    </div>
                     <motion.div
                       animate={{ rotate: openItems.includes(index) ? 180 : 0 }}
                       transition={{ duration: 0.3, ease: 'easeInOut' }}
