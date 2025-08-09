@@ -1,7 +1,7 @@
 import React from 'react'
 import Hero from '../components/sections/Hero'
 import { Countdown } from '../components/sections/Countdown'
-import { Story } from '../components/sections/Story'
+import Story from '../components/sections/Story'
 import Tiers from '../components/sections/Tiers'
 import FAQ from '../components/sections/FAQ'
 import Footer from '../components/sections/Footer'
@@ -22,7 +22,7 @@ export default function HomePage() {
         naverUrl={config.naverUrl}
         tossUrl={config.tossUrl}
       />
-      <Story config={config.story} badges={config.badges} />
+      <Story />
       <Tiers />
       <FAQ />
       <Footer />
