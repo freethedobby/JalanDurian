@@ -161,67 +161,6 @@ export default function Story() {
             </Card>
           </motion.div>
         </motion.div>
-
-        {/* Exclusive Partner Farm - Enhanced */}
-        <motion.div className="mb-16" variants={staggerItemVariants}>
-          <Card className="mx-auto max-w-4xl border-black/20 bg-black/10 shadow-xl backdrop-blur-sm">
-            <CardContent className="p-8 md:p-12">
-              <div className="text-center">
-                <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-emerald-600 to-emerald-700">
-                  <Award className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="mb-6 text-2xl font-bold text-black md:text-3xl">
-                  EXCLUSIVE 파트너 농장
-                </h3>
-                <div className="space-y-4 text-left md:space-y-6">
-                  <div className="grid gap-4 md:grid-cols-2">
-                    <div className="rounded-lg bg-black/5 p-4">
-                      <h5 className="mb-2 font-semibold text-emerald-700">
-                        농장 위치
-                      </h5>
-                      <p className="text-sm text-gray-800">
-                        말레이시아 조호르바루 고지대 프리미엄 농장
-                      </p>
-                    </div>
-                    <div className="rounded-lg bg-black/5 p-4">
-                      <h5 className="mb-2 font-semibold text-emerald-700">
-                        재배 경력
-                      </h5>
-                      <p className="text-sm text-gray-800">
-                        3대째 30년 이상 Black Thorn 전문 재배
-                      </p>
-                    </div>
-                    <div className="rounded-lg bg-black/5 p-4">
-                      <h5 className="mb-2 font-semibold text-emerald-700">
-                        독점 계약
-                      </h5>
-                      <p className="text-sm text-gray-800">
-                        최상급 등급 Black Thorn D200 100% 독점 공급
-                      </p>
-                    </div>
-                    <div className="rounded-lg bg-black/5 p-4">
-                      <h5 className="mb-2 font-semibold text-emerald-700">
-                        품질 보증
-                      </h5>
-                      <p className="text-sm text-gray-800">
-                        수확 당일 항공 운송, 48시간 내 한국 도착
-                      </p>
-                    </div>
-                  </div>
-                  <div className="mt-6 rounded-lg bg-emerald-50/50 p-4 text-center">
-                    <p className="text-base font-medium text-emerald-800">
-                      "우리 가족이 먹을 수 있는 최고의 두리안만 JALAN DURIAN에
-                      공급합니다"
-                    </p>
-                    <p className="mt-2 text-sm text-emerald-600">
-                      - 농장주 직접 전언 -
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </motion.div>
       </motion.div>
 
       {/* 메시지 모달 */}
