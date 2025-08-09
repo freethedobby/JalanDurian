@@ -3,7 +3,7 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
-import { MapPin, Award, X, Heart, Quote } from 'lucide-react'
+import { Award, X, Heart, Quote } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from '../ui/card'
 import {
   useInViewMotion,
@@ -112,28 +112,26 @@ export function Story({ config, badges }: StoryProps) {
           className="grid gap-8 md:grid-cols-2"
           variants={staggerContainerVariants}
         >
-          {/* Location */}
+          {/* Exclusive Partner Farm */}
           <motion.div variants={staggerItemVariants}>
             <Card className="h-full border-black/20 bg-black/10 shadow-lg backdrop-blur-sm">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-black">
-                  <MapPin className="h-5 w-5 text-green-600" />
-                  농장 위치
+                  <Award className="h-5 w-5 text-green-600" />
+                  Exclusive 파트너 농장
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>
-                  <h4 className="font-semibold text-black">
-                    {config.location.name}
-                  </h4>
-                  <p className="text-sm text-gray-700">
-                    {config.location.coordinates}
+                  <p className="text-sm leading-relaxed text-gray-800">
+                    말레이시아 프리미엄 농장과의 독점 파트너십을 통해 최상급
+                    Black Thorn 두리안만을 선별하여 공급받습니다.
                   </p>
                 </div>
                 <div className="relative aspect-video overflow-hidden rounded-lg">
                   <Image
                     src={config.location.mapImage}
-                    alt={config.location.name}
+                    alt="Exclusive Partner Farm"
                     fill
                     className="object-cover"
                   />
