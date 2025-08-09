@@ -119,7 +119,7 @@ export default function Tiers() {
                     }`}
                     onClick={() => scrollToSection('countdown')}
                   >
-                    {index === 1 ? 'RESERVE NOW' : 'SELECT PLAN'}
+                    예약하기
                   </Button>
                 </div>
               </motion.div>

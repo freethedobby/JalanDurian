@@ -260,7 +260,7 @@ export default function Hero() {
             className="transform rounded-xl border border-emerald-500/20 bg-gradient-to-r from-emerald-600 to-emerald-700 px-8 py-4 text-base font-semibold text-white shadow-2xl transition-all duration-300 hover:scale-105 hover:from-emerald-700 hover:to-emerald-800 md:px-12 md:py-6 md:text-lg"
             onClick={() => scrollToSection('countdown')}
           >
-            RESERVE PREMIUM DURIAN
+            예약하기
           </Button>
           <p className="mt-2 text-xs font-medium text-gray-600 md:text-sm">
             한정 수량 333개 • 예약 오픈 임박
