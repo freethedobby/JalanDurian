@@ -332,7 +332,7 @@ export default function AdminPage() {
                     Reservation 섹션 배너
                   </label>
                   <p className="text-xs text-gray-500">
-                    "GRAND OPENING SALE" 배너 표시
+                    &ldquo;GRAND OPENING SALE&rdquo; 배너 표시
                   </p>
                 </div>
                 <button
@@ -367,7 +367,7 @@ export default function AdminPage() {
                     Premium Collection 섹션 배너
                   </label>
                   <p className="text-xs text-gray-500">
-                    "LIMITED TIME OFFER" 배너 표시
+                    &ldquo;LIMITED TIME OFFER&rdquo; 배너 표시
                   </p>
                 </div>
                 <button
