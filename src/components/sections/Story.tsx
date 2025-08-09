@@ -78,7 +78,7 @@ export default function Story() {
           </Card>
         </motion.div>
 
-        {/* Values Grid */}
+        {/* Partnership Advantages */}
         <motion.div
           className="mb-16 grid gap-6 md:grid-cols-3"
           variants={staggerContainerVariants}
@@ -86,15 +86,15 @@ export default function Story() {
           <motion.div variants={staggerItemVariants}>
             <Card className="h-full border-black/20 bg-black/5 shadow-lg backdrop-blur-sm transition-all duration-300 hover:bg-black/10">
               <CardContent className="p-6 text-center">
-                <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-red-500 to-red-600">
-                  <Heart className="h-6 w-6 text-white" />
+                <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-emerald-500 to-emerald-600">
+                  <Award className="h-6 w-6 text-white" />
                 </div>
                 <h4 className="mb-3 text-lg font-semibold text-black">
-                  말레이시아 사랑
+                  독점 계약 농장
                 </h4>
                 <p className="text-sm text-gray-700">
-                  10년 이상의 현지 거주 경험으로 말레이시아 문화에 대한 깊은
-                  애정과 이해
+                  말레이시아 조호르바루 프리미엄 농장과의 독점 계약으로 최상급
+                  Black Thorn만 확보
                 </p>
               </CardContent>
             </Card>
@@ -107,10 +107,11 @@ export default function Story() {
                   <Globe className="h-6 w-6 text-white" />
                 </div>
                 <h4 className="mb-3 text-lg font-semibold text-black">
-                  문화 연결
+                  현지 품질 관리
                 </h4>
                 <p className="text-sm text-gray-700">
-                  두리안을 통해 말레이시아와 한국 사이의 문화적 가교 역할 추구
+                  농장에서 직접 선별부터 포장까지 전 과정 관리, 한국 도착까지
+                  콜드체인 유지
                 </p>
               </CardContent>
             </Card>
@@ -119,35 +120,78 @@ export default function Story() {
           <motion.div variants={staggerItemVariants}>
             <Card className="h-full border-black/20 bg-black/5 shadow-lg backdrop-blur-sm transition-all duration-300 hover:bg-black/10">
               <CardContent className="p-6 text-center">
-                <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-emerald-500 to-emerald-600">
-                  <Award className="h-6 w-6 text-white" />
+                <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-amber-500 to-amber-600">
+                  <Heart className="h-6 w-6 text-white" />
                 </div>
                 <h4 className="mb-3 text-lg font-semibold text-black">
-                  품질 철학
+                  3대째 농장 운영
                 </h4>
                 <p className="text-sm text-gray-700">
-                  직접 맛보고 인정한 최고급 품질만을 고객에게 전달하는 철저한
-                  원칙
+                  30년 이상 Black Thorn 재배 노하우를 가진 3대째 농장주와의 신뢰
+                  관계
                 </p>
               </CardContent>
             </Card>
           </motion.div>
         </motion.div>
 
-        {/* Exclusive Partner Farm - Simple */}
+        {/* Exclusive Partner Farm - Enhanced */}
         <motion.div className="mb-16" variants={staggerItemVariants}>
-          <Card className="mx-auto max-w-2xl border-black/20 bg-black/10 shadow-lg backdrop-blur-sm">
-            <CardContent className="p-8 text-center">
-              <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-emerald-600 to-emerald-700">
-                <Award className="h-6 w-6 text-white" />
+          <Card className="mx-auto max-w-4xl border-black/20 bg-black/10 shadow-xl backdrop-blur-sm">
+            <CardContent className="p-8 md:p-12">
+              <div className="text-center">
+                <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-emerald-600 to-emerald-700">
+                  <Award className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="mb-6 text-2xl font-bold text-black md:text-3xl">
+                  EXCLUSIVE 파트너 농장
+                </h3>
+                <div className="space-y-4 text-left md:space-y-6">
+                  <div className="grid gap-4 md:grid-cols-2">
+                    <div className="rounded-lg bg-black/5 p-4">
+                      <h5 className="mb-2 font-semibold text-emerald-700">
+                        농장 위치
+                      </h5>
+                      <p className="text-sm text-gray-800">
+                        말레이시아 조호르바루 고지대 프리미엄 농장
+                      </p>
+                    </div>
+                    <div className="rounded-lg bg-black/5 p-4">
+                      <h5 className="mb-2 font-semibold text-emerald-700">
+                        재배 경력
+                      </h5>
+                      <p className="text-sm text-gray-800">
+                        3대째 30년 이상 Black Thorn 전문 재배
+                      </p>
+                    </div>
+                    <div className="rounded-lg bg-black/5 p-4">
+                      <h5 className="mb-2 font-semibold text-emerald-700">
+                        독점 계약
+                      </h5>
+                      <p className="text-sm text-gray-800">
+                        최상급 등급 Black Thorn D200 100% 독점 공급
+                      </p>
+                    </div>
+                    <div className="rounded-lg bg-black/5 p-4">
+                      <h5 className="mb-2 font-semibold text-emerald-700">
+                        품질 보증
+                      </h5>
+                      <p className="text-sm text-gray-800">
+                        수확 당일 항공 운송, 48시간 내 한국 도착
+                      </p>
+                    </div>
+                  </div>
+                  <div className="mt-6 rounded-lg bg-emerald-50/50 p-4 text-center">
+                    <p className="text-base font-medium text-emerald-800">
+                      "우리 가족이 먹을 수 있는 최고의 두리안만 JALAN DURIAN에
+                      공급합니다"
+                    </p>
+                    <p className="mt-2 text-sm text-emerald-600">
+                      - 농장주 직접 전언 -
+                    </p>
+                  </div>
+                </div>
               </div>
-              <h4 className="mb-4 text-xl font-semibold text-black">
-                Exclusive 파트너 농장
-              </h4>
-              <p className="text-base text-gray-800">
-                말레이시아 프리미엄 농장과의 독점 파트너십을 통해 최상급 Black
-                Thorn 두리안만을 선별하여 공급받습니다.
-              </p>
             </CardContent>
           </Card>
         </motion.div>
