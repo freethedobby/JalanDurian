@@ -44,15 +44,14 @@ export function KingOfKingWatermark({
   }, [])
 
   const isRightSide = currentSectionIndex % 2 === 1
-  const rotation = isRightSide ? 15 : -15
 
   return (
     <motion.div
       className={`pointer-events-none fixed inset-0 z-10 flex items-center overflow-hidden ${className}`}
       style={{
         justifyContent: isRightSide ? 'flex-end' : 'flex-start',
-        paddingLeft: isRightSide ? '0' : '5%',
-        paddingRight: isRightSide ? '5%' : '0',
+        paddingLeft: isRightSide ? '0' : '2%',
+        paddingRight: isRightSide ? '2%' : '0',
       }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -60,11 +59,15 @@ export function KingOfKingWatermark({
     >
       <motion.div
         className="select-none"
-        initial={{ scale: 0.5, opacity: 0, rotate: rotation * 2 }}
+        style={{
+          transform: 'rotate(-90deg)',
+          transformOrigin: 'center',
+        }}
+        initial={{ scale: 0.5, opacity: 0, y: 50 }}
         animate={{
           scale: 1,
           opacity: 1,
-          rotate: rotation,
+          y: 0,
         }}
         transition={{
           duration: 1.5,
@@ -73,10 +76,10 @@ export function KingOfKingWatermark({
         }}
         key={currentSectionIndex} // 섹션 변경 시 재애니메이션
       >
-        <div className="relative">
+        <div className="relative flex items-center gap-4">
           {/* 메인 텍스트 */}
           <h1
-            className="whitespace-nowrap text-4xl font-black uppercase tracking-wider md:text-6xl lg:text-7xl xl:text-8xl"
+            className="text-3xl font-black uppercase tracking-widest md:text-5xl lg:text-6xl xl:text-7xl"
             style={{
               WebkitTextStroke: '2px rgba(0, 0, 0, 0.05)',
               color: 'transparent',
@@ -88,11 +91,9 @@ export function KingOfKingWatermark({
           </h1>
 
           {/* 서브 텍스트 */}
-          <div
-            className={`absolute -bottom-2 ${isRightSide ? 'left-0' : 'right-0'} md:-bottom-4 lg:-bottom-5 xl:-bottom-6`}
-          >
+          <div>
             <p
-              className="whitespace-nowrap text-sm font-bold uppercase tracking-widest md:text-lg lg:text-xl xl:text-2xl"
+              className="text-xs font-bold uppercase tracking-widest md:text-sm lg:text-base xl:text-lg"
               style={{
                 WebkitTextStroke: '1px rgba(0, 0, 0, 0.04)',
                 color: 'transparent',
@@ -105,7 +106,7 @@ export function KingOfKingWatermark({
 
           {/* 미묘한 글로우 효과 */}
           <motion.div
-            className="absolute inset-0"
+            className="absolute inset-0 flex items-center gap-4"
             animate={{
               opacity: [0.05, 0.15, 0.05],
             }}
@@ -116,7 +117,7 @@ export function KingOfKingWatermark({
             }}
           >
             <h1
-              className="whitespace-nowrap text-4xl font-black uppercase tracking-wider md:text-6xl lg:text-7xl xl:text-8xl"
+              className="text-3xl font-black uppercase tracking-widest md:text-5xl lg:text-6xl xl:text-7xl"
               style={{
                 WebkitTextStroke: '1px rgba(255, 215, 0, 0.1)',
                 color: 'transparent',
