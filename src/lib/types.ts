@@ -42,7 +42,7 @@ export interface SiteConfig {
     notice: string
     items: TierItem[]
   }
-  faq: FAQ[]
+  faqCategories: FAQCategory[]
   company: Company
 }
 
@@ -85,6 +85,13 @@ export interface TierItem {
 export interface FAQ {
   question: string
   answer: string
+  image: string
+}
+
+export interface FAQCategory {
+  category: string
+  icon: string
+  questions: FAQ[]
 }
 
 export interface Company {
