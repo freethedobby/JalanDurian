@@ -62,27 +62,10 @@ export default function Hero() {
           }}
         >
           <motion.div
-            className="relative flex items-center gap-2 rounded-full border border-white/10 bg-black/20 px-3 py-2 backdrop-blur-sm md:gap-3 md:px-4"
-            whileHover={{
-              scale: 1.05,
-              boxShadow: '0 0 30px rgba(255, 215, 0, 0.3)',
-            }}
+            className="flex items-center gap-3 md:gap-4"
+            whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
           >
-            {/* 배경 발광 효과 */}
-            <motion.div
-              className="absolute inset-0 rounded-full bg-gradient-to-r from-yellow-400/10 via-transparent to-yellow-400/10"
-              animate={{
-                opacity: [0.3, 0.6, 0.3],
-                scale: [1, 1.02, 1],
-              }}
-              transition={{
-                duration: 2.5,
-                repeat: Infinity,
-                ease: 'easeInOut',
-              }}
-            />
-
             <motion.span
               className="relative z-10 text-xl drop-shadow-lg md:text-2xl"
               initial={{ rotateY: -180 }}
@@ -165,6 +148,16 @@ export default function Hero() {
               </span>
             </span>
           </motion.h1>
+
+          {/* Made in Malaysia */}
+          <motion.p
+            className="mb-4 text-xs font-light uppercase tracking-widest text-gray-600 md:mb-6 md:text-sm"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.6 }}
+          >
+            made in malaysia
+          </motion.p>
 
           <motion.div
             className="space-y-1 md:space-y-2"
