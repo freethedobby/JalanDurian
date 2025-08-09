@@ -130,9 +130,9 @@
     "notice": "매주 화요일 새벽 6시, 한정 수량 오픈",
     "items": [
       {
-        "name": "스탠다드",
+        "name": "두리안 라자무다",
         "weight": "2.0-2.4kg",
-        "description": "1-2인 가구에 적합한 크기",
+        "description": "1-2인 가구에 적합한 크기 (Small)",
         "originalPrice": 89000,
         "launchPrice": 39000,
         "features": [
@@ -142,9 +142,9 @@
         ]
       },
       {
-        "name": "프리미엄",
+        "name": "두리안 스당",
         "weight": "2.5-2.9kg",
-        "description": "3-4인 가구 추천",
+        "description": "3-4인 가구 추천 (Medium)",
         "originalPrice": 109000,
         "launchPrice": 49000,
         "features": [
@@ -155,9 +155,9 @@
         ]
       },
       {
-        "name": "킹사이즈",
+        "name": "두리안 라자",
         "weight": "3.0kg+",
-        "description": "대가족 또는 선물용",
+        "description": "대가족 또는 선물용 (Large)",
         "originalPrice": 139000,
         "launchPrice": 69000,
         "features": [
