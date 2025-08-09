@@ -49,7 +49,7 @@ export default function Hero() {
         initial="hidden"
         animate="visible"
       >
-        {/* BLACK THORN 메인 헤딩 */}
+        {/* BLACKTHORN MALAYSIA 메인 헤딩 */}
         <motion.div className="mb-4 md:mb-6" variants={fadeInUp}>
           <motion.h1
             className="relative mb-3 text-4xl font-black md:text-6xl lg:text-7xl"
@@ -63,7 +63,7 @@ export default function Hero() {
           >
             {/* 메인 텍스트 */}
             <span className="relative z-10 bg-gradient-to-b from-black via-gray-800 to-black bg-clip-text text-transparent drop-shadow-2xl filter">
-              BLACK THORN
+              BLACKTHORN MALAYSIA
             </span>
 
             {/* 자연스러운 발광 효과 */}
@@ -79,12 +79,12 @@ export default function Hero() {
                 ease: 'easeInOut',
               }}
             >
-              BLACK THORN
+              BLACKTHORN MALAYSIA
             </motion.span>
 
             {/* 부드러운 그림자 */}
             <span className="absolute inset-0 -z-20 translate-x-0.5 translate-y-0.5 bg-gradient-to-b from-gray-600/20 to-gray-800/30 bg-clip-text text-transparent">
-              BLACK THORN
+              BLACKTHORN MALAYSIA
             </span>
           </motion.h1>
 
@@ -95,20 +95,20 @@ export default function Hero() {
             transition={{ delay: 0.8, duration: 0.8 }}
           >
             <motion.p
-              className="text-base font-semibold text-gray-800 md:text-lg lg:text-xl"
+              className="text-base font-bold text-gray-800 md:text-lg lg:text-xl"
               initial={{ x: -30, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ delay: 1, duration: 0.6 }}
             >
-              말레이시아 최고급 두리안
+              말레이시아산 최고급 품종
             </motion.p>
             <motion.p
-              className="text-sm font-medium text-gray-700 md:text-base lg:text-lg"
+              className="text-sm font-black uppercase tracking-wide text-gray-900 md:text-base lg:text-lg"
               initial={{ x: 30, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ delay: 1.2, duration: 0.6 }}
             >
-              King of Fruits의 진정한 왕관
+              명실상부 KING OF KING OF FRUIT
             </motion.p>
           </motion.div>
         </motion.div>
