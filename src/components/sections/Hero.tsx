@@ -201,7 +201,7 @@ export default function Hero() {
               animate={{ x: 0, opacity: 1 }}
               transition={{ delay: 1.2, duration: 0.6 }}
             >
-              명실상부 KING OF KING OF FRUIT
+              프리미엄 블랙쏜 D200
             </motion.p>
           </motion.div>
         </motion.div>
