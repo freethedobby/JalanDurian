@@ -3,7 +3,7 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronDown } from 'lucide-react'
+import { ChevronDown, Star, Package, Truck } from 'lucide-react'
 import {
   useInViewMotion,
   fadeInVariants,
@@ -14,33 +14,27 @@ import siteConfig from '../../../content/site.json'
 
 export default function FAQ() {
   const { ref, isInView } = useInViewMotion()
-  const [openItems, setOpenItems] = useState<number[]>([])
+  const [openItems, setOpenItems] = useState<string[]>([])
 
-  const toggleItem = (index: number) => {
+  const toggleItem = (itemId: string) => {
     setOpenItems((prev) =>
-      prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
+      prev.includes(itemId)
+        ? prev.filter((id) => id !== itemId)
+        : [...prev, itemId]
     )
   }
 
-  // FAQ 항목에 따른 이미지 매핑
-  const getFAQImage = (question: string, index: number) => {
-    if (question.includes('Black Thorn')) {
-      return '/assets/images/farmer-kim.jpg' // Black Thorn 관련 질문
-    } else if (question.includes('말레이시아')) {
-      return '/assets/images/farm-location.jpg' // 말레이시아 관련 질문
-    } else if (question.includes('보관')) {
-      return '/assets/images/farmer-lee.jpg' // 보관 관련 질문
-    } else if (question.includes('향')) {
-      return '/assets/images/hero-farm.jpg' // 향 관련 질문
-    } else {
-      // 기본 이미지들을 순환
-      const defaultImages = [
-        '/assets/images/farmer-kim.jpg',
-        '/assets/images/farmer-lee.jpg',
-        '/assets/images/farm-location.jpg',
-        '/assets/images/hero-farm.jpg',
-      ]
-      return defaultImages[index % defaultImages.length]
+  // 아이콘 매핑
+  const getIconComponent = (iconName: string) => {
+    switch (iconName) {
+      case 'star':
+        return Star
+      case 'package':
+        return Package
+      case 'truck':
+        return Truck
+      default:
+        return Star
     }
   }
 
@@ -66,68 +60,87 @@ export default function FAQ() {
           </p>
         </motion.div>
 
-        <motion.div className="space-y-4" variants={staggerContainerVariants}>
-          {siteConfig.faq.map(
-            (item: { question: string; answer: string }, index: number) => (
-              <motion.div
-                key={index}
-                variants={staggerItemVariants}
-                className="overflow-hidden rounded-2xl border border-gray-200 bg-white/80 shadow-lg backdrop-blur-sm transition-all duration-300 hover:shadow-xl"
-              >
-                <button
-                  onClick={() => toggleItem(index)}
-                  className="w-full px-8 py-6 text-left transition-all duration-300 hover:bg-gray-50/50"
-                >
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-4">
-                      <motion.div
-                        className="relative h-12 w-12 flex-shrink-0 overflow-hidden rounded-full border-2 border-emerald-200 shadow-md"
-                        whileHover={{ scale: 1.1, rotate: 5 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        <Image
-                          src={getFAQImage(item.question, index)}
-                          alt="durian related"
-                          fill
-                          className="object-cover transition-transform duration-300 hover:scale-110"
-                          sizes="48px"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/20 to-transparent opacity-0 transition-opacity duration-300 hover:opacity-100" />
-                      </motion.div>
-                      <h3 className="pr-4 text-lg font-semibold leading-relaxed text-gray-900 md:text-xl">
-                        {item.question}
-                      </h3>
-                    </div>
-                    <motion.div
-                      animate={{ rotate: openItems.includes(index) ? 180 : 0 }}
-                      transition={{ duration: 0.3, ease: 'easeInOut' }}
-                      className="flex-shrink-0"
-                    >
-                      <ChevronDown className="h-5 w-5 text-emerald-600" />
-                    </motion.div>
-                  </div>
-                </button>
+        <motion.div className="space-y-8" variants={staggerContainerVariants}>
+          {siteConfig.faqCategories.map((category, categoryIndex) => (
+            <motion.div key={category.category} variants={staggerItemVariants}>
+              {/* 카테고리 헤더 */}
+              <div className="mb-4 flex items-center gap-3">
+                {React.createElement(getIconComponent(category.icon), {
+                  className: 'h-6 w-6 text-emerald-600',
+                })}
+                <h3 className="text-xl font-semibold text-gray-900">
+                  {category.category}
+                </h3>
+              </div>
 
-                <AnimatePresence>
-                  {openItems.includes(index) && (
+              {/* 카테고리별 질문들 */}
+              <div className="space-y-3">
+                {category.questions.map((item, questionIndex) => {
+                  const itemId = `${categoryIndex}-${questionIndex}`
+                  return (
                     <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: 'easeInOut' }}
-                      className="overflow-hidden"
+                      key={itemId}
+                      variants={staggerItemVariants}
+                      className="overflow-hidden rounded-2xl border border-gray-200 bg-white/80 shadow-lg backdrop-blur-sm transition-all duration-300 hover:shadow-xl"
                     >
-                      <div className="border-t border-gray-100 bg-gray-50/30 px-8 py-6">
-                        <p className="text-base font-light leading-relaxed text-gray-700 md:text-lg">
-                          {item.answer}
-                        </p>
-                      </div>
+                      <button
+                        onClick={() => toggleItem(itemId)}
+                        className="w-full px-6 py-4 text-left transition-all duration-300 hover:bg-gray-50/50"
+                      >
+                        <div className="flex items-center justify-between">
+                          <h4 className="pr-4 text-base font-medium leading-relaxed text-gray-900 md:text-lg">
+                            {item.question}
+                          </h4>
+                          <motion.div
+                            animate={{
+                              rotate: openItems.includes(itemId) ? 180 : 0,
+                            }}
+                            transition={{ duration: 0.3, ease: 'easeInOut' }}
+                            className="flex-shrink-0"
+                          >
+                            <ChevronDown className="h-5 w-5 text-emerald-600" />
+                          </motion.div>
+                        </div>
+                      </button>
+
+                      <AnimatePresence>
+                        {openItems.includes(itemId) && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: 'auto', opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.3, ease: 'easeInOut' }}
+                            className="overflow-hidden"
+                          >
+                            <div className="border-t border-gray-100 bg-gray-50/30 px-6 py-6">
+                              <div className="grid gap-4 md:grid-cols-3">
+                                <div className="md:col-span-2">
+                                  <p className="text-base font-light leading-relaxed text-gray-700">
+                                    {item.answer}
+                                  </p>
+                                </div>
+                                <div className="flex justify-center">
+                                  <div className="relative h-32 w-32 overflow-hidden rounded-xl shadow-md">
+                                    <Image
+                                      src={item.image}
+                                      alt="FAQ related image"
+                                      fill
+                                      className="object-cover"
+                                      sizes="128px"
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
                     </motion.div>
-                  )}
-                </AnimatePresence>
-              </motion.div>
-            )
-          )}
+                  )
+                })}
+              </div>
+            </motion.div>
+          ))}
         </motion.div>
 
         <motion.div className="mt-16 text-center" variants={fadeInVariants}>
