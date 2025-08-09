@@ -109,49 +109,15 @@ export function ScrollIndicator({ className = '' }: ScrollIndicatorProps) {
                 const Icon = section.icon
                 const isActive = activeSection === section.id
 
-                // Get background color based on current section
-                const getSectionBgColor = (sectionId: string) => {
-                  switch (sectionId) {
-                    case 'hero':
-                    case 'story':
-                      return '#eec32f' // yellow
-                    case 'countdown':
-                    case 'tiers':
-                      return '#2d7d32' // green
-                    case 'faq':
-                      return '#fff8e1' // light yellow
-                    default:
-                      return '#eec32f'
-                  }
-                }
-
-                const currentSectionBg = getSectionBgColor(activeSection)
-                const isYellowSection =
-                  currentSectionBg === '#eec32f' ||
-                  currentSectionBg === '#fff8e1'
-
                 return (
                   <button
                     key={section.id}
                     onClick={() => scrollToSection(section.id)}
                     className={`group relative flex h-10 w-10 items-center justify-center rounded-lg transition-all duration-200 md:h-12 md:w-12 md:rounded-xl ${
                       isActive
-                        ? isYellowSection
-                          ? 'text-emerald-700 shadow-lg'
-                          : 'bg-white text-emerald-700 shadow-lg'
-                        : isYellowSection
-                          ? 'text-gray-700 hover:bg-white hover:text-emerald-700'
-                          : 'bg-emerald-600/80 text-white hover:bg-white hover:text-emerald-700'
+                        ? 'bg-white text-emerald-700 shadow-lg'
+                        : 'bg-emerald-600/80 text-white hover:bg-white hover:text-emerald-700'
                     }`}
-                    style={{
-                      backgroundColor: isActive
-                        ? isYellowSection
-                          ? currentSectionBg
-                          : 'white'
-                        : isYellowSection
-                          ? currentSectionBg
-                          : undefined,
-                    }}
                   >
                     <Icon className="h-4 w-4 md:h-5 md:w-5" />
 
