@@ -4,6 +4,7 @@ import React from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Button } from '../ui/button'
+import { ScrollArrow } from '../ScrollArrow'
 import { scrollToSection } from '../../lib/utils'
 
 const fadeInUp = {
@@ -236,39 +237,13 @@ export default function Hero() {
           </p>
         </motion.div>
 
-        {/* 미니멀 스크롤 화살표 */}
+        {/* 스크롤 화살표 */}
         <motion.div
-          className="flex justify-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 3, duration: 0.6 }}
         >
-          <motion.div
-            animate={{ y: [0, 6, 0] }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              ease: 'easeInOut',
-            }}
-            className="cursor-pointer"
-            onClick={() => scrollToSection('countdown')}
-          >
-            <svg
-              width="32"
-              height="32"
-              viewBox="0 0 24 24"
-              fill="none"
-              style={{ color: '#2d7d32' }}
-            >
-              <path
-                d="M7 10L12 15L17 10"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </motion.div>
+          <ScrollArrow targetId="countdown" backgroundColor="yellow" />
         </motion.div>
       </motion.div>
     </section>

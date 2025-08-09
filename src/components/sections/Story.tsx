@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Award, X, Heart } from 'lucide-react'
+import { ScrollArrow } from '../ScrollArrow'
 import { Card, CardContent, CardHeader, CardTitle } from '../ui/card'
 import {
   useInViewMotion,
@@ -241,6 +242,9 @@ export function Story({ config, badges }: StoryProps) {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* 스크롤 화살표 */}
+      <ScrollArrow targetId="tiers" backgroundColor="yellow" className="pb-8" />
     </section>
   )
 }

@@ -4,6 +4,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Clock, ExternalLink } from 'lucide-react'
 import { Button } from '../ui/button'
+import { ScrollArrow } from '../ScrollArrow'
 
 import { useCountdown } from '../../hooks/useCountdown'
 import { useInViewMotion, fadeInVariants } from '../../hooks/useInViewMotion'
@@ -170,6 +171,13 @@ export function Countdown({ launchDate, naverUrl, tossUrl }: CountdownProps) {
             </motion.div>
           )}
         </div>
+
+        {/* 스크롤 화살표 */}
+        <ScrollArrow
+          targetId="story"
+          backgroundColor="green"
+          className="mt-8"
+        />
       </motion.div>
     </section>
   )

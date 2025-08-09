@@ -3,6 +3,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Button } from '../ui/button'
+import { ScrollArrow } from '../ScrollArrow'
 import { scrollToSection } from '../../lib/utils'
 import {
   useInViewMotion,
@@ -132,6 +133,9 @@ export default function Tiers() {
             보장합니다
           </p>
         </motion.div>
+
+        {/* 스크롤 화살표 */}
+        <ScrollArrow targetId="faq" backgroundColor="green" className="mt-8" />
       </motion.div>
     </section>
   )
