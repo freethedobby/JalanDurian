@@ -49,6 +49,69 @@ export default function Hero() {
         initial="hidden"
         animate="visible"
       >
+        {/* Country Flags */}
+        <motion.div
+          className="mb-6 flex items-center justify-center gap-4 md:mb-8"
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            delay: 0.5,
+            duration: 0.8,
+            type: 'spring',
+            stiffness: 100,
+          }}
+        >
+          <motion.div
+            className="relative flex items-center gap-2 rounded-full border border-white/10 bg-black/20 px-3 py-2 backdrop-blur-sm md:gap-3 md:px-4"
+            whileHover={{
+              scale: 1.05,
+              boxShadow: '0 0 30px rgba(255, 215, 0, 0.3)',
+            }}
+            transition={{ duration: 0.3 }}
+          >
+            {/* 배경 발광 효과 */}
+            <motion.div
+              className="absolute inset-0 rounded-full bg-gradient-to-r from-yellow-400/10 via-transparent to-yellow-400/10"
+              animate={{
+                opacity: [0.3, 0.6, 0.3],
+                scale: [1, 1.02, 1],
+              }}
+              transition={{
+                duration: 2.5,
+                repeat: Infinity,
+                ease: 'easeInOut',
+              }}
+            />
+
+            <motion.span
+              className="relative z-10 text-xl drop-shadow-lg md:text-2xl"
+              initial={{ rotateY: -180 }}
+              animate={{ rotateY: 0 }}
+              transition={{ delay: 0.8, duration: 0.6 }}
+              whileHover={{ scale: 1.1 }}
+            >
+              🇲🇾
+            </motion.span>
+
+            <motion.div
+              className="h-3 w-px bg-gradient-to-b from-transparent via-yellow-400/60 to-transparent md:h-4"
+              initial={{ scaleY: 0 }}
+              animate={{ scaleY: 1 }}
+              transition={{ delay: 1, duration: 0.4 }}
+            />
+
+            <motion.span
+              className="relative z-10 text-xl drop-shadow-lg md:text-2xl"
+              initial={{ rotateY: 180 }}
+              animate={{ rotateY: 0 }}
+              transition={{ delay: 1.2, duration: 0.6 }}
+              whileHover={{ scale: 1.1 }}
+            >
+              🇰🇷
+            </motion.span>
+          </motion.div>
+        </motion.div>
+
         {/* BLACKTHORN MALAYSIA 메인 헤딩 */}
         <motion.div className="mb-4 md:mb-6" variants={fadeInUp}>
           <motion.h1
@@ -125,69 +188,6 @@ export default function Hero() {
             >
               명실상부 KING OF KING OF FRUIT
             </motion.p>
-          </motion.div>
-        </motion.div>
-
-        {/* Country Flags */}
-        <motion.div
-          className="mb-4 flex items-center justify-center gap-4 md:mb-6"
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{
-            delay: 1.5,
-            duration: 0.8,
-            type: 'spring',
-            stiffness: 100,
-          }}
-        >
-          <motion.div
-            className="relative flex items-center gap-2 rounded-full border border-white/10 bg-black/20 px-3 py-2 backdrop-blur-sm md:gap-3 md:px-4"
-            whileHover={{
-              scale: 1.05,
-              boxShadow: '0 0 30px rgba(255, 215, 0, 0.3)',
-            }}
-            transition={{ duration: 0.3 }}
-          >
-            {/* 배경 발광 효과 */}
-            <motion.div
-              className="absolute inset-0 rounded-full bg-gradient-to-r from-yellow-400/10 via-transparent to-yellow-400/10"
-              animate={{
-                opacity: [0.3, 0.6, 0.3],
-                scale: [1, 1.02, 1],
-              }}
-              transition={{
-                duration: 2.5,
-                repeat: Infinity,
-                ease: 'easeInOut',
-              }}
-            />
-
-            <motion.span
-              className="relative z-10 text-xl drop-shadow-lg md:text-2xl"
-              initial={{ rotateY: -180 }}
-              animate={{ rotateY: 0 }}
-              transition={{ delay: 1.8, duration: 0.6 }}
-              whileHover={{ scale: 1.1 }}
-            >
-              🇲🇾
-            </motion.span>
-
-            <motion.div
-              className="h-3 w-px bg-gradient-to-b from-transparent via-yellow-400/60 to-transparent md:h-4"
-              initial={{ scaleY: 0 }}
-              animate={{ scaleY: 1 }}
-              transition={{ delay: 2, duration: 0.4 }}
-            />
-
-            <motion.span
-              className="relative z-10 text-xl drop-shadow-lg md:text-2xl"
-              initial={{ rotateY: 180 }}
-              animate={{ rotateY: 0 }}
-              transition={{ delay: 2.2, duration: 0.6 }}
-              whileHover={{ scale: 1.1 }}
-            >
-              🇰🇷
-            </motion.span>
           </motion.div>
         </motion.div>
 
