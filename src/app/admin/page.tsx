@@ -26,6 +26,10 @@ interface SiteConfig {
   inventory: number
   fullPrice: number
   launchPrice: number
+  banners: {
+    reservationBanner: boolean
+    tiersBanner: boolean
+  }
 }
 
 export default function AdminPage() {
@@ -37,6 +41,10 @@ export default function AdminPage() {
     inventory: 0,
     fullPrice: 0,
     launchPrice: 0,
+    banners: {
+      reservationBanner: true,
+      tiersBanner: true,
+    },
   })
   const [loading, setLoading] = useState(false)
   const [message, setMessage] = useState('')
@@ -65,6 +73,10 @@ export default function AdminPage() {
         inventory: 333,
         fullPrice: 120000,
         launchPrice: 50000,
+        banners: {
+          reservationBanner: true,
+          tiersBanner: true,
+        },
       })
     }
   }
@@ -298,6 +310,118 @@ export default function AdminPage() {
             </Card>
           </motion.div>
         </div>
+
+        {/* 배너 설정 */}
+        <motion.div
+          className="mt-6"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          <Card className="border-0 shadow-lg">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 text-green-700">
+                <Eye className="h-5 w-5" />
+                프로모션 배너 설정
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="flex items-center justify-between">
+                <div>
+                  <label className="text-sm font-medium text-gray-700">
+                    Reservation 섹션 배너
+                  </label>
+                  <p className="text-xs text-gray-500">
+                    "GRAND OPENING SALE" 배너 표시
+                  </p>
+                </div>
+                <button
+                  onClick={() =>
+                    setConfig((prev) => ({
+                      ...prev,
+                      banners: {
+                        ...prev.banners,
+                        reservationBanner: !prev.banners.reservationBanner,
+                      },
+                    }))
+                  }
+                  className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
+                    config.banners.reservationBanner
+                      ? 'bg-green-600'
+                      : 'bg-gray-200'
+                  }`}
+                >
+                  <span
+                    className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
+                      config.banners.reservationBanner
+                        ? 'translate-x-6'
+                        : 'translate-x-1'
+                    }`}
+                  />
+                </button>
+              </div>
+
+              <div className="flex items-center justify-between">
+                <div>
+                  <label className="text-sm font-medium text-gray-700">
+                    Premium Collection 섹션 배너
+                  </label>
+                  <p className="text-xs text-gray-500">
+                    "LIMITED TIME OFFER" 배너 표시
+                  </p>
+                </div>
+                <button
+                  onClick={() =>
+                    setConfig((prev) => ({
+                      ...prev,
+                      banners: {
+                        ...prev.banners,
+                        tiersBanner: !prev.banners.tiersBanner,
+                      },
+                    }))
+                  }
+                  className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
+                    config.banners.tiersBanner ? 'bg-green-600' : 'bg-gray-200'
+                  }`}
+                >
+                  <span
+                    className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
+                      config.banners.tiersBanner
+                        ? 'translate-x-6'
+                        : 'translate-x-1'
+                    }`}
+                  />
+                </button>
+              </div>
+
+              <div className="mt-4 rounded-lg bg-gray-50 p-3">
+                <h4 className="mb-2 text-sm font-medium text-gray-700">
+                  현재 상태:
+                </h4>
+                <div className="space-y-1 text-xs text-gray-600">
+                  <div className="flex items-center gap-2">
+                    {config.banners.reservationBanner ? (
+                      <Eye className="h-3 w-3 text-green-600" />
+                    ) : (
+                      <EyeOff className="h-3 w-3 text-gray-400" />
+                    )}
+                    Reservation 배너:{' '}
+                    {config.banners.reservationBanner ? '표시' : '숨김'}
+                  </div>
+                  <div className="flex items-center gap-2">
+                    {config.banners.tiersBanner ? (
+                      <Eye className="h-3 w-3 text-green-600" />
+                    ) : (
+                      <EyeOff className="h-3 w-3 text-gray-400" />
+                    )}
+                    Premium Collection 배너:{' '}
+                    {config.banners.tiersBanner ? '표시' : '숨김'}
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </motion.div>
 
         {/* 저장 버튼 */}
         <motion.div

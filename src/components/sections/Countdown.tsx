@@ -9,6 +9,7 @@ import { ScrollArrow } from '../ScrollArrow'
 import { useCountdown } from '../../hooks/useCountdown'
 import { useInViewMotion, fadeInVariants } from '../../hooks/useInViewMotion'
 import { formatDateToKorean, addUTMParams, isValidUrl } from '../../lib/utils'
+import siteConfig from '../../../content/site.json'
 
 interface CountdownProps {
   launchDate: string
@@ -60,45 +61,47 @@ export function Countdown({ launchDate, naverUrl, tossUrl }: CountdownProps) {
           </motion.div>
 
           {/* 세일 프로모션 밴드 스트립 */}
-          <motion.div
-            className="-mx-4 mb-6 md:-mx-6 md:mb-8 lg:-mx-8"
-            variants={fadeInVariants}
-          >
-            <div className="relative overflow-hidden bg-gradient-to-r from-red-600 via-red-500 to-red-600 py-3 shadow-2xl md:py-4">
-              {/* 움직이는 배경 패턴 */}
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
-                animate={{
-                  x: ['-100%', '200%'],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: 'linear',
-                }}
-              />
+          {siteConfig.banners.reservationBanner && (
+            <motion.div
+              className="-mx-4 mb-6 md:-mx-6 md:mb-8 lg:-mx-8"
+              variants={fadeInVariants}
+            >
+              <div className="relative overflow-hidden bg-gradient-to-r from-red-600 via-red-500 to-red-600 py-3 shadow-2xl md:py-4">
+                {/* 움직이는 배경 패턴 */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                  animate={{
+                    x: ['-100%', '200%'],
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: 'linear',
+                  }}
+                />
 
-              {/* 사선 패턴 */}
-              <div className="absolute inset-0 bg-[repeating-linear-gradient(45deg,transparent,transparent_10px,rgba(255,255,255,0.1)_10px,rgba(255,255,255,0.1)_20px)]" />
+                {/* 사선 패턴 */}
+                <div className="absolute inset-0 bg-[repeating-linear-gradient(45deg,transparent,transparent_10px,rgba(255,255,255,0.1)_10px,rgba(255,255,255,0.1)_20px)]" />
 
-              <div className="relative z-10 flex items-center justify-center gap-4 text-center md:gap-6">
-                <div className="text-xl font-black text-white md:text-2xl lg:text-3xl">
-                  🔥 GRAND OPENING SALE
-                </div>
-                <div className="hidden h-6 w-px bg-white/50 md:block" />
-                <div className="text-lg font-bold text-yellow-300 md:text-xl lg:text-2xl">
-                  최대 40% 할인
-                </div>
-                <div className="text-base font-bold text-yellow-200 md:text-lg lg:text-xl">
-                  + 무료배송
-                </div>
-                <div className="hidden h-6 w-px bg-white/50 md:block" />
-                <div className="text-sm font-medium text-white md:text-base lg:text-lg">
-                  한정 333개
+                <div className="relative z-10 flex items-center justify-center gap-4 text-center md:gap-6">
+                  <div className="text-xl font-black text-white md:text-2xl lg:text-3xl">
+                    🔥 GRAND OPENING SALE
+                  </div>
+                  <div className="hidden h-6 w-px bg-white/50 md:block" />
+                  <div className="text-lg font-bold text-yellow-300 md:text-xl lg:text-2xl">
+                    최대 40% 할인
+                  </div>
+                  <div className="text-base font-bold text-yellow-200 md:text-lg lg:text-xl">
+                    + 무료배송
+                  </div>
+                  <div className="hidden h-6 w-px bg-white/50 md:block" />
+                  <div className="text-sm font-medium text-white md:text-base lg:text-lg">
+                    한정 333개
+                  </div>
                 </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          )}
 
           <motion.p
             className="mb-8 text-base font-medium text-gray-100 md:mb-12 md:text-lg lg:text-xl xl:text-2xl"

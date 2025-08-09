@@ -8,6 +8,10 @@ export interface SiteConfig {
   launchPrice: number
   naverUrl: string
   tossUrl: string
+  banners: {
+    reservationBanner: boolean
+    tiersBanner: boolean
+  }
   badges: string[]
   hero: {
     headline: string

@@ -35,45 +35,47 @@ export default function Tiers() {
           </h2>
 
           {/* 세일 프로모션 밴드 스트립 */}
-          <motion.div
-            className="-mx-4 mb-8 md:-mx-6 lg:-mx-8"
-            variants={fadeInVariants}
-          >
-            <div className="relative overflow-hidden bg-gradient-to-r from-yellow-500 via-yellow-400 to-yellow-500 py-3 shadow-2xl md:py-4">
-              {/* 움직이는 배경 패턴 */}
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
-                animate={{
-                  x: ['200%', '-100%'],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: 'linear',
-                }}
-              />
+          {siteConfig.banners.tiersBanner && (
+            <motion.div
+              className="-mx-4 mb-8 md:-mx-6 lg:-mx-8"
+              variants={fadeInVariants}
+            >
+              <div className="relative overflow-hidden bg-gradient-to-r from-yellow-500 via-yellow-400 to-yellow-500 py-3 shadow-2xl md:py-4">
+                {/* 움직이는 배경 패턴 */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
+                  animate={{
+                    x: ['200%', '-100%'],
+                  }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: 'linear',
+                  }}
+                />
 
-              {/* 사선 패턴 */}
-              <div className="absolute inset-0 bg-[repeating-linear-gradient(-45deg,transparent,transparent_8px,rgba(0,0,0,0.1)_8px,rgba(0,0,0,0.1)_16px)]" />
+                {/* 사선 패턴 */}
+                <div className="absolute inset-0 bg-[repeating-linear-gradient(-45deg,transparent,transparent_8px,rgba(0,0,0,0.1)_8px,rgba(0,0,0,0.1)_16px)]" />
 
-              <div className="relative z-10 flex items-center justify-center gap-4 text-center md:gap-6">
-                <div className="text-xl font-black text-red-600 md:text-2xl lg:text-3xl">
-                  ⚡ LIMITED TIME OFFER
-                </div>
-                <div className="hidden h-6 w-px bg-black/30 md:block" />
-                <div className="text-lg font-bold text-green-800 md:text-xl lg:text-2xl">
-                  런칭 기념 40% 할인
-                </div>
-                <div className="text-base font-bold text-green-700 md:text-lg lg:text-xl">
-                  + 항공 직송
-                </div>
-                <div className="hidden h-6 w-px bg-black/30 md:block" />
-                <div className="text-sm font-medium text-red-600 md:text-base lg:text-lg">
-                  정가 대비 특가
+                <div className="relative z-10 flex items-center justify-center gap-4 text-center md:gap-6">
+                  <div className="text-xl font-black text-red-600 md:text-2xl lg:text-3xl">
+                    ⚡ LIMITED TIME OFFER
+                  </div>
+                  <div className="hidden h-6 w-px bg-black/30 md:block" />
+                  <div className="text-lg font-bold text-green-800 md:text-xl lg:text-2xl">
+                    런칭 기념 40% 할인
+                  </div>
+                  <div className="text-base font-bold text-green-700 md:text-lg lg:text-xl">
+                    + 항공 직송
+                  </div>
+                  <div className="hidden h-6 w-px bg-black/30 md:block" />
+                  <div className="text-sm font-medium text-red-600 md:text-base lg:text-lg">
+                    정가 대비 특가
+                  </div>
                 </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          )}
 
           <p className="mx-auto max-w-3xl text-lg font-light leading-relaxed text-gray-100 md:text-xl">
             엄선된 최고급 Black Thorn 두리안을 특별한 가격으로 만나보세요

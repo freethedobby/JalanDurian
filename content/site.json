@@ -8,6 +8,10 @@
   "launchPrice": 50000,
   "naverUrl": "https://smartstore.naver.com/jalan-durian",
   "tossUrl": "https://toss.me/jalan-durian",
+  "banners": {
+    "reservationBanner": true,
+    "tiersBanner": true
+  },
   "badges": [
     "GAP",
     "MPCA"
