@@ -206,20 +206,20 @@ export default function Story() {
                   <div>
                     <blockquote className="text-center">
                       <p className="mb-4 text-lg leading-relaxed text-gray-800">
-                        "말레이시아에서 10년 이상 거주하며 이 나라의 문화와
-                        사람들을 깊이 사랑하게 되었습니다. 두리안이라는 특별한
-                        과일을 통해 말레이시아의 아름다운 문화를 한국에 전파하고
-                        싶습니다."
+                        &ldquo;말레이시아에서 10년 이상 거주하며 이 나라의
+                        문화와 사람들을 깊이 사랑하게 되었습니다. 두리안이라는
+                        특별한 과일을 통해 말레이시아의 아름다운 문화를 한국에
+                        전파하고 싶습니다.&rdquo;
                       </p>
                       <p className="mb-4 text-lg leading-relaxed text-gray-800">
-                        "두리안을 사랑하는 만큼, 두리안으로 말레이시아와 한국을
-                        연결하는 다리 역할을 하고자 합니다. 추천하지 않는 것, 내
-                        입맛에 맞지 않는 것은 절대 팔지 않습니다."
+                        &ldquo;두리안을 사랑하는 만큼, 두리안으로 말레이시아와
+                        한국을 연결하는 다리 역할을 하고자 합니다. 추천하지 않는
+                        것, 내 입맛에 맞지 않는 것은 절대 팔지 않습니다.&rdquo;
                       </p>
                       <p className="text-lg font-semibold text-emerald-700">
-                        "Black Thorn D200의 헤어나올 수 없는 맛을 통해,
+                        &ldquo;Black Thorn D200의 헤어나올 수 없는 맛을 통해,
                         우리나라에서 감히 맛보기 힘든 진정한 말레이시아를
-                        선물하고 싶습니다."
+                        선물하고 싶습니다.&rdquo;
                       </p>
                     </blockquote>
                   </div>
@@ -227,18 +227,18 @@ export default function Story() {
                   <div>
                     <blockquote className="text-center">
                       <p className="mb-4 text-lg italic leading-relaxed text-gray-800">
-                        "Durian Black Thorn adalah warisan tiga generasi kami.
-                        Kami hanya menjual buah yang terbaik untuk keluarga
-                        sendiri."
+                        &ldquo;Durian Black Thorn adalah warisan tiga generasi
+                        kami. Kami hanya menjual buah yang terbaik untuk
+                        keluarga sendiri.&rdquo;
                       </p>
                       <div className="mt-4 border-t border-gray-100 pt-4">
                         <p className="mb-2 text-sm text-gray-600">
                           한국어 번역:
                         </p>
                         <p className="text-base italic text-gray-700">
-                          "Black Thorn 두리안은 우리 3대에 걸친 유산입니다.
-                          우리는 우리 가족이 먹을 수 있는 최고의 과일만
-                          판매합니다."
+                          &ldquo;Black Thorn 두리안은 우리 3대에 걸친
+                          유산입니다. 우리는 우리 가족이 먹을 수 있는 최고의
+                          과일만 판매합니다.&rdquo;
                         </p>
                       </div>
                     </blockquote>
