@@ -5,7 +5,6 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Button } from '../ui/button'
 import { scrollToSection } from '../../lib/utils'
-import siteConfig from '../../../content/site.json'
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },

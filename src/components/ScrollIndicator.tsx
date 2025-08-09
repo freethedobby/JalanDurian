@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Home, Users, DollarSign, HelpCircle } from 'lucide-react'
 
@@ -14,12 +14,15 @@ export function ScrollIndicator({ className = '' }: ScrollIndicatorProps) {
   const [isVisible, setIsVisible] = useState(false)
   const [isScrolling, setIsScrolling] = useState(false)
 
-  const sections = [
-    { id: 'hero', label: '홈', icon: Home },
-    { id: 'story', label: '스토리', icon: Users },
-    { id: 'tiers', label: '가격', icon: DollarSign },
-    { id: 'faq', label: '질문', icon: HelpCircle },
-  ]
+  const sections = useMemo(
+    () => [
+      { id: 'hero', label: '홈', icon: Home },
+      { id: 'story', label: '스토리', icon: Users },
+      { id: 'tiers', label: '가격', icon: DollarSign },
+      { id: 'faq', label: '질문', icon: HelpCircle },
+    ],
+    []
+  )
 
   useEffect(() => {
     let scrollTimeout: NodeJS.Timeout
