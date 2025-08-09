@@ -24,7 +24,11 @@ export function KingOfKingWatermark({
         }}
         initial={{ scale: 0.5, opacity: 0, rotate: -30 }}
         animate={{ scale: 1, opacity: 1, rotate: -15 }}
-        transition={{ duration: 1.5, delay: 1.2, ease: 'easeOutBack' }}
+        transition={{
+          duration: 1.5,
+          delay: 1.2,
+          ease: [0.175, 0.885, 0.32, 1.275],
+        }}
       >
         <div className="relative">
           {/* 메인 텍스트 */}
