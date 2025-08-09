@@ -3,7 +3,7 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Award, X, Heart, Quote } from 'lucide-react'
+import { Award, X, Heart } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from '../ui/card'
 import {
   useInViewMotion,
@@ -218,7 +218,7 @@ export function Story({ config, badges }: StoryProps) {
                 <div>
                   <blockquote className="text-center">
                     <p className="text-lg italic leading-relaxed text-gray-800">
-                      "{farmerPhilosophies[selectedFarmer]?.quote}"
+                      &ldquo;{farmerPhilosophies[selectedFarmer]?.quote}&rdquo;
                     </p>
 
                     {/* 말레이어 번역 */}
@@ -228,7 +228,9 @@ export function Story({ config, badges }: StoryProps) {
                           한국어 번역:
                         </p>
                         <p className="text-base italic text-gray-700">
-                          "{farmerPhilosophies[selectedFarmer]?.translation}"
+                          &ldquo;
+                          {farmerPhilosophies[selectedFarmer]?.translation}
+                          &rdquo;
                         </p>
                       </div>
                     )}
