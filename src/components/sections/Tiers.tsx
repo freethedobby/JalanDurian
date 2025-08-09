@@ -34,26 +34,42 @@ export default function Tiers() {
             PREMIUM COLLECTION
           </h2>
 
-          {/* 세일 프로모션 배너 */}
+          {/* 세일 프로모션 밴드 스트립 */}
           <motion.div
-            className="mx-auto mb-8 max-w-2xl"
+            className="-mx-4 mb-8 md:-mx-6 lg:-mx-8"
             variants={fadeInVariants}
           >
-            <div className="relative overflow-hidden rounded-2xl border-2 border-yellow-300 bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-400 p-4 shadow-2xl md:p-6">
-              <div className="absolute -left-6 -top-6 h-16 w-16 rotate-45 bg-red-500 text-white md:h-20 md:w-20">
-                <div className="absolute bottom-1 right-1 text-xs font-bold md:bottom-2 md:right-2">
-                  OFF
+            <div className="relative overflow-hidden bg-gradient-to-r from-yellow-500 via-yellow-400 to-yellow-500 py-3 shadow-2xl md:py-4">
+              {/* 움직이는 배경 패턴 */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
+                animate={{
+                  x: ['200%', '-100%'],
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: 'linear',
+                }}
+              />
+
+              {/* 사선 패턴 */}
+              <div className="absolute inset-0 bg-[repeating-linear-gradient(-45deg,transparent,transparent_8px,rgba(0,0,0,0.1)_8px,rgba(0,0,0,0.1)_16px)]" />
+
+              <div className="relative z-10 flex items-center justify-center gap-4 text-center md:gap-6">
+                <div className="text-xl font-black text-red-600 md:text-2xl lg:text-3xl">
+                  ⚡ LIMITED TIME OFFER
                 </div>
-              </div>
-              <div className="text-center">
-                <div className="mb-2 text-xl font-black text-red-600 md:text-2xl">
-                  ⚡ LIMITED TIME OFFER ⚡
+                <div className="hidden h-6 w-px bg-black/30 md:block" />
+                <div className="text-lg font-bold text-green-800 md:text-xl lg:text-2xl">
+                  런칭 기념 40% 할인
                 </div>
-                <div className="mb-2 text-base font-bold text-green-800 md:text-lg">
-                  런칭 기념 최대 40% 할인가
+                <div className="text-base font-bold text-green-700 md:text-lg lg:text-xl">
+                  + 항공 직송
                 </div>
-                <div className="text-sm font-medium text-green-700">
-                  정가 대비 특별 할인 + 당일 항공 직송
+                <div className="hidden h-6 w-px bg-black/30 md:block" />
+                <div className="text-sm font-medium text-red-600 md:text-base lg:text-lg">
+                  정가 대비 특가
                 </div>
               </div>
             </div>

@@ -59,23 +59,42 @@ export function Countdown({ launchDate, naverUrl, tossUrl }: CountdownProps) {
             </h2>
           </motion.div>
 
-          {/* 세일 프로모션 배너 */}
-          <motion.div className="mb-6 md:mb-8" variants={fadeInVariants}>
-            <div className="relative overflow-hidden rounded-2xl border-2 border-yellow-300 bg-gradient-to-r from-yellow-400 to-yellow-500 p-6 shadow-2xl">
-              <div className="absolute -right-8 -top-8 h-24 w-24 rotate-45 bg-red-500 text-white">
-                <div className="absolute bottom-2 left-2 text-xs font-bold">
-                  SALE
+          {/* 세일 프로모션 밴드 스트립 */}
+          <motion.div
+            className="-mx-4 mb-6 md:-mx-6 md:mb-8 lg:-mx-8"
+            variants={fadeInVariants}
+          >
+            <div className="relative overflow-hidden bg-gradient-to-r from-red-600 via-red-500 to-red-600 py-3 shadow-2xl md:py-4">
+              {/* 움직이는 배경 패턴 */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                animate={{
+                  x: ['-100%', '200%'],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: 'linear',
+                }}
+              />
+
+              {/* 사선 패턴 */}
+              <div className="absolute inset-0 bg-[repeating-linear-gradient(45deg,transparent,transparent_10px,rgba(255,255,255,0.1)_10px,rgba(255,255,255,0.1)_20px)]" />
+
+              <div className="relative z-10 flex items-center justify-center gap-4 text-center md:gap-6">
+                <div className="text-xl font-black text-white md:text-2xl lg:text-3xl">
+                  🔥 GRAND OPENING SALE
                 </div>
-              </div>
-              <div className="text-center">
-                <div className="mb-2 text-2xl font-black text-red-600 md:text-3xl">
-                  🔥 GRAND OPENING SALE 🔥
+                <div className="hidden h-6 w-px bg-white/50 md:block" />
+                <div className="text-lg font-bold text-yellow-300 md:text-xl lg:text-2xl">
+                  최대 40% 할인
                 </div>
-                <div className="mb-3 text-lg font-bold text-green-800 md:text-xl">
-                  최대 40% 할인 + 무료배송
+                <div className="text-base font-bold text-yellow-200 md:text-lg lg:text-xl">
+                  + 무료배송
                 </div>
-                <div className="text-sm font-medium text-green-700 md:text-base">
-                  한정 수량 333개 • 조기 마감 예상
+                <div className="hidden h-6 w-px bg-white/50 md:block" />
+                <div className="text-sm font-medium text-white md:text-base lg:text-lg">
+                  한정 333개
                 </div>
               </div>
             </div>
