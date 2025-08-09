@@ -25,27 +25,17 @@ export function Story({ config, badges }: StoryProps) {
   // 농장주별 가치관 데이터
   const farmerPhilosophies: Record<
     string,
-    { quote: string; translation?: string; values: string[] }
+    { quote: string; translation?: string }
   > = {
     'LEE&PARK 대표': {
       quote:
         '추천하지 않는 것, 내 입맛에 맞지 않는 것은 팔지 않습니다. Black Thorn D200에 헤어나올 수 없는 맛. 우리나라에서 감히 맛보기 힘든 맛을 고객분들께 선물해주고 싶습니다.',
-      values: [
-        '품질에 대한 타협 없는 철학',
-        '고객에게 진정한 감동을 선사하는 것',
-        '말레이시아 현지에서 10년간 쌓은 전문성',
-      ],
     },
     '현지 농장 파트너': {
       quote:
         'Durian Black Thorn adalah warisan tiga generasi kami. Kami hanya menjual buah yang terbaik untuk keluarga sendiri.',
       translation:
         'Black Thorn 두리안은 우리 3대에 걸친 유산입니다. 우리는 우리 가족이 먹을 수 있는 최고의 과일만 판매합니다.',
-      values: [
-        '3대에 걸친 전통 농법',
-        '자연과 조화로운 유기농 재배',
-        '가족과 같은 마음으로 고객을 대하는 철학',
-      ],
     },
   }
 
@@ -245,22 +235,6 @@ export function Story({ config, badges }: StoryProps) {
                       </div>
                     )}
                   </blockquote>
-                </div>
-
-                {/* 핵심 가치 */}
-                <div>
-                  <div className="space-y-2">
-                    {farmerPhilosophies[selectedFarmer]?.values.map(
-                      (value, index) => (
-                        <div
-                          key={index}
-                          className="text-center text-sm text-gray-600"
-                        >
-                          {value}
-                        </div>
-                      )
-                    )}
-                  </div>
                 </div>
               </div>
             </motion.div>
