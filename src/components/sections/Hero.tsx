@@ -108,18 +108,13 @@ export default function Hero() {
             }}
           >
             {/* 메인 텍스트 */}
-            <span className="relative z-10 drop-shadow-2xl filter">
-              <span className="bg-gradient-to-b from-black via-gray-800 to-black bg-clip-text text-transparent">
-                BLACKTHORN{' '}
-              </span>
-              <span className="bg-gradient-to-r from-red-600 via-blue-700 to-yellow-500 bg-clip-text font-black text-transparent">
-                MALAYSIA
-              </span>
+            <span className="relative z-10 bg-gradient-to-b from-black via-gray-800 to-black bg-clip-text text-transparent drop-shadow-2xl filter">
+              BLACKTHORN D200
             </span>
 
             {/* 자연스러운 발광 효과 */}
             <motion.span
-              className="absolute inset-0 -z-10 blur-md"
+              className="absolute inset-0 -z-10 bg-gradient-to-r from-yellow-400/15 via-yellow-300/25 to-yellow-400/15 bg-clip-text text-transparent blur-md"
               animate={{
                 opacity: [0.3, 0.6, 0.4, 0.7, 0.3],
                 scale: [1, 1.01, 1, 1.01, 1],
@@ -130,22 +125,12 @@ export default function Hero() {
                 ease: 'easeInOut',
               }}
             >
-              <span className="bg-gradient-to-r from-yellow-400/15 via-yellow-300/25 to-yellow-400/15 bg-clip-text text-transparent">
-                BLACKTHORN{' '}
-              </span>
-              <span className="bg-gradient-to-r from-red-400/20 via-blue-500/20 to-yellow-400/20 bg-clip-text text-transparent">
-                MALAYSIA
-              </span>
+              BLACKTHORN D200
             </motion.span>
 
             {/* 부드러운 그림자 */}
-            <span className="absolute inset-0 -z-20 translate-x-0.5 translate-y-0.5">
-              <span className="bg-gradient-to-b from-gray-600/20 to-gray-800/30 bg-clip-text text-transparent">
-                BLACKTHORN{' '}
-              </span>
-              <span className="bg-gradient-to-r from-red-600/30 via-blue-700/30 to-yellow-500/30 bg-clip-text text-transparent">
-                MALAYSIA
-              </span>
+            <span className="absolute inset-0 -z-20 translate-x-0.5 translate-y-0.5 bg-gradient-to-b from-gray-600/20 to-gray-800/30 bg-clip-text text-transparent">
+              BLACKTHORN D200
             </span>
           </motion.h1>
 
