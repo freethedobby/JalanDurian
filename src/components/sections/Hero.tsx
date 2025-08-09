@@ -135,14 +135,51 @@ export default function Hero() {
           </motion.h1>
 
           {/* Made in Malaysia */}
-          <motion.p
-            className="mb-4 text-xs font-light uppercase tracking-widest text-gray-600 md:mb-6 md:text-sm"
+          <motion.div
+            className="relative mb-4 md:mb-6"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.6 }}
           >
-            made in malaysia
-          </motion.p>
+            {/* 글로우 배경 */}
+            <motion.div
+              className="absolute inset-0 flex items-center justify-center"
+              animate={{
+                opacity: [0.3, 0.7, 0.3],
+                scale: [1, 1.05, 1],
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                ease: 'easeInOut',
+              }}
+            >
+              <div className="h-4 w-32 rounded-full bg-gradient-to-r from-red-500/20 via-yellow-400/20 to-blue-500/20 blur-sm md:h-5 md:w-40" />
+            </motion.div>
+
+            {/* 메인 텍스트 */}
+            <motion.p
+              className="relative z-10 text-xs font-medium uppercase tracking-widest text-gray-800 drop-shadow-sm md:text-sm"
+              style={{
+                textShadow:
+                  '0 0 8px rgba(255, 215, 0, 0.3), 0 0 16px rgba(255, 215, 0, 0.1)',
+              }}
+              animate={{
+                textShadow: [
+                  '0 0 8px rgba(255, 215, 0, 0.3), 0 0 16px rgba(255, 215, 0, 0.1)',
+                  '0 0 12px rgba(255, 215, 0, 0.5), 0 0 24px rgba(255, 215, 0, 0.2)',
+                  '0 0 8px rgba(255, 215, 0, 0.3), 0 0 16px rgba(255, 215, 0, 0.1)',
+                ],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: 'easeInOut',
+              }}
+            >
+              made in malaysia
+            </motion.p>
+          </motion.div>
 
           <motion.div
             className="space-y-1 md:space-y-2"
