@@ -87,7 +87,7 @@ export function KingOfKingWatermark({
               filter: 'drop-shadow(0 0 10px rgba(255, 215, 0, 0.1))',
             }}
           >
-            KING OF KING
+            #Jalan Durian
           </h1>
 
           {/* 서브 텍스트 */}
@@ -99,9 +99,7 @@ export function KingOfKingWatermark({
                 color: 'transparent',
                 textShadow: '0 0 15px rgba(0, 0, 0, 0.02)',
               }}
-            >
-              OF FRUIT
-            </p>
+            ></p>
           </div>
 
           {/* 미묘한 글로우 효과 */}
@@ -124,7 +122,7 @@ export function KingOfKingWatermark({
                 filter: 'blur(2px)',
               }}
             >
-              KING OF KING
+              #Jalan Durian
             </h1>
           </motion.div>
         </div>
