@@ -8,6 +8,7 @@
   "launchPrice": 50000,
   "naverUrl": "https://smartstore.naver.com/jalan-durian",
   "tossUrl": "https://toss.me/jalan-durian",
+  "coupangUrl": "https://www.coupang.com/vp/products/jalan-durian",
   "banners": {
     "reservationBanner": true,
     "tiersBanner": true

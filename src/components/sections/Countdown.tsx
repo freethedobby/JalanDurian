@@ -15,9 +15,15 @@ interface CountdownProps {
   launchDate: string
   naverUrl: string
   tossUrl: string
+  coupangUrl: string
 }
 
-export function Countdown({ launchDate, naverUrl, tossUrl }: CountdownProps) {
+export function Countdown({
+  launchDate,
+  naverUrl,
+  tossUrl,
+  coupangUrl,
+}: CountdownProps) {
   const { ref, isInView } = useInViewMotion()
   const { days, hours, minutes, seconds, isExpired } = useCountdown(launchDate)
 
@@ -148,28 +154,38 @@ export function Countdown({ launchDate, naverUrl, tossUrl }: CountdownProps) {
                 </motion.p>
 
                 <motion.div
-                  className="flex flex-col justify-center gap-3 sm:flex-row sm:gap-4 md:gap-4 md:gap-6"
+                  className="flex flex-col justify-center gap-3 sm:grid sm:grid-cols-2 sm:gap-4 md:flex md:flex-row md:gap-6"
                   variants={fadeInVariants}
                 >
                   <Button
                     onClick={() => handleCTAClick(naverUrl, 'naver')}
                     variant="outline"
                     size="lg"
-                    className="w-full border-2 border-yellow-300 bg-yellow-300 px-6 py-3 text-sm font-bold text-green-800 shadow-lg hover:bg-yellow-400 sm:w-auto md:px-8 md:py-4 md:text-base"
+                    className="w-full border-2 border-green-400 bg-green-400/90 px-4 py-3 text-sm font-bold text-green-900 shadow-lg hover:bg-green-500 sm:w-auto md:px-6 md:py-4 md:text-base"
                     disabled={!isValidUrl(naverUrl)}
                   >
                     <ExternalLink className="mr-2 h-4 w-4 md:h-5 md:w-5" />
-                    네이버에서 사전예약
+                    네이버 사전예약
                   </Button>
                   <Button
                     onClick={() => handleCTAClick(tossUrl, 'toss')}
                     variant="outline"
                     size="lg"
-                    className="w-full border-2 border-white bg-white/90 px-6 py-3 text-sm font-bold text-green-800 shadow-lg backdrop-blur-sm hover:bg-gray-100 sm:w-auto md:px-8 md:py-4 md:text-base"
+                    className="w-full border-2 border-blue-400 bg-blue-400/90 px-4 py-3 text-sm font-bold text-blue-900 shadow-lg hover:bg-blue-500 sm:w-auto md:px-6 md:py-4 md:text-base"
                     disabled={!isValidUrl(tossUrl)}
                   >
                     <ExternalLink className="mr-2 h-4 w-4 md:h-5 md:w-5" />
-                    토스페이로 간편결제
+                    토스 사전예약
+                  </Button>
+                  <Button
+                    onClick={() => handleCTAClick(coupangUrl, 'coupang')}
+                    variant="outline"
+                    size="lg"
+                    className="w-full border-2 border-orange-400 bg-orange-400/90 px-4 py-3 text-sm font-bold text-orange-900 shadow-lg hover:bg-orange-500 sm:w-auto md:px-6 md:py-4 md:text-base"
+                    disabled={!isValidUrl(coupangUrl)}
+                  >
+                    <ExternalLink className="mr-2 h-4 w-4 md:h-5 md:w-5" />
+                    쿠팡 사전예약
                   </Button>
                 </motion.div>
               </motion.div>
@@ -189,27 +205,35 @@ export function Countdown({ launchDate, naverUrl, tossUrl }: CountdownProps) {
                 프리미엄 Black Thorn 두리안을 지금 바로 주문하실 수 있습니다
               </p>
               <motion.div
-                className="flex flex-col justify-center gap-3 sm:flex-row sm:gap-4 md:gap-4 md:gap-6"
+                className="flex flex-col justify-center gap-3 sm:grid sm:grid-cols-2 sm:gap-4 md:flex md:flex-row md:gap-6"
                 variants={fadeInVariants}
               >
                 <Button
                   onClick={() => handleCTAClick(naverUrl, 'naver')}
                   size="lg"
-                  className="w-full bg-yellow-300 px-6 py-3 text-sm font-bold text-green-800 shadow-lg hover:bg-yellow-400 sm:w-auto md:px-8 md:py-4 md:text-base"
+                  className="w-full bg-green-600 px-4 py-3 text-sm font-bold text-white shadow-lg hover:bg-green-700 sm:w-auto md:px-6 md:py-4 md:text-base"
                   disabled={!isValidUrl(naverUrl)}
                 >
                   <ExternalLink className="mr-2 h-4 w-4 md:h-5 md:w-5" />
-                  네이버에서 주문하기
+                  네이버 쇼핑
                 </Button>
                 <Button
                   onClick={() => handleCTAClick(tossUrl, 'toss')}
-                  variant="outline"
                   size="lg"
-                  className="w-full border-2 border-white bg-white/90 px-6 py-3 text-sm font-bold text-green-800 shadow-lg backdrop-blur-sm hover:bg-gray-100 sm:w-auto md:px-8 md:py-4 md:text-base"
+                  className="w-full bg-blue-600 px-4 py-3 text-sm font-bold text-white shadow-lg hover:bg-blue-700 sm:w-auto md:px-6 md:py-4 md:text-base"
                   disabled={!isValidUrl(tossUrl)}
                 >
                   <ExternalLink className="mr-2 h-4 w-4 md:h-5 md:w-5" />
-                  토스페이로 주문하기
+                  토스 쇼핑
+                </Button>
+                <Button
+                  onClick={() => handleCTAClick(coupangUrl, 'coupang')}
+                  size="lg"
+                  className="w-full bg-orange-600 px-4 py-3 text-sm font-bold text-white shadow-lg hover:bg-orange-700 sm:w-auto md:px-6 md:py-4 md:text-base"
+                  disabled={!isValidUrl(coupangUrl)}
+                >
+                  <ExternalLink className="mr-2 h-4 w-4 md:h-5 md:w-5" />
+                  쿠팡
                 </Button>
               </motion.div>
             </motion.div>

@@ -8,6 +8,7 @@ export interface SiteConfig {
   launchPrice: number
   naverUrl: string
   tossUrl: string
+  coupangUrl: string
   banners: {
     reservationBanner: boolean
     tiersBanner: boolean

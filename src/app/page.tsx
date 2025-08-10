@@ -21,6 +21,7 @@ export default function HomePage() {
         launchDate={config.launchDate}
         naverUrl={config.naverUrl}
         tossUrl={config.tossUrl}
+        coupangUrl={config.coupangUrl}
       />
       <Story />
       <Tiers />
