@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import React from 'react'
 import { cn } from '../lib/utils'
-import { KingOfKingWatermark } from '../components/KingOfKingWatermark'
+// import { KingOfKingWatermark } from '../components/KingOfKingWatermark'
 import '../styles/globals.css'
 
 const inter = Inter({
@@ -92,7 +92,7 @@ export default function RootLayout({
         )}
       >
         <div className="relative flex min-h-screen flex-col">
-          <KingOfKingWatermark />
+          {/* <KingOfKingWatermark /> */}
           <main className="flex-1">{children}</main>
         </div>
       </body>
