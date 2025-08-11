@@ -12,16 +12,19 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'JALAN DURIAN - 말레이시아 프리미엄 두리안, 농장 직송',
+  title: 'BLACKTHORN D200 - 말레이시아산 최고급 품종 | JALAN DURIAN',
   description:
-    'Black Thorn의 깊은 향과 단맛을, 가장 신선한 순간에. 333개 한정 프리오더',
+    'BLACKTHORN D200 프리미엄 블랙쏜. 말레이시아산 최고급 품종, made in malaysia. 333개 한정 런칭 예약',
   keywords: [
+    'BLACKTHORN D200',
+    '블랙쏜',
     '두리안',
-    'Black Thorn',
-    '말레이시아',
+    '말레이시아산',
+    '최고급 품종',
+    'made in malaysia',
     '프리미엄',
-    '농장직송',
-    '한정판매',
+    '333개 한정',
+    '런칭 예약',
   ],
   authors: [{ name: 'Jalan Durian' }],
   creator: 'Jalan Durian',
@@ -36,9 +39,9 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'JALAN DURIAN - 말레이시아 프리미엄 두리안, 농장 직송',
+    title: 'BLACKTHORN D200 - 말레이시아산 최고급 품종',
     description:
-      'Black Thorn의 깊은 향과 단맛을, 가장 신선한 순간에. 333개 한정 프리오더',
+      'BLACKTHORN D200 프리미엄 블랙쏜. 말레이시아산 최고급 품종, made in malaysia. 333개 한정 런칭',
     url: 'https://jalan-durian.com',
     siteName: 'JALAN DURIAN',
     images: [
@@ -46,7 +49,7 @@ export const metadata: Metadata = {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Jalan Durian - 프리미엄 두리안',
+        alt: 'BLACKTHORN D200 - 말레이시아산 최고급 품종 프리미엄 두리안',
       },
     ],
     locale: 'ko_KR',
@@ -54,9 +57,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'JALAN DURIAN - 말레이시아 프리미엄 두리안, 농장 직송',
+    title: 'BLACKTHORN D200 - 말레이시아산 최고급 품종',
     description:
-      'Black Thorn의 깊은 향과 단맛을, 가장 신선한 순간에. 333개 한정 프리오더',
+      'BLACKTHORN D200 프리미엄 블랙쏜. 말레이시아산 최고급 품종, made in malaysia. 333개 한정 런칭',
     images: ['/og-image.jpg'],
   },
   robots: {
